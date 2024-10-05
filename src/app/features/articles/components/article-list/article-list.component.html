@@ -1,0 +1,6 @@
+<div *ngIf="(response$ | async) as articles">
+    @for (item of articles; track $index) {
+    <p>{{item.author}}</p>
+    <p>{{item.content}}</p>
+    }
+</div>

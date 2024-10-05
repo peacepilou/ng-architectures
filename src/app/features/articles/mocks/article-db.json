@@ -1,0 +1,44 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Understanding Clean Architecture",
+      "content": "Clean Architecture is a software design philosophy that emphasizes separation of concerns, making it easier to manage complexity and evolve the system over time.",
+      "author": "Alice Johnson",
+      "publishedDate": "2024-09-15T10:00:00Z",
+      "tags": ["architecture", "software design", "clean code"]
+    },
+    {
+      "id": 2,
+      "title": "Exploring Angular: A Comprehensive Guide",
+      "content": "Angular is a powerful framework for building dynamic web applications. This guide will help you navigate its features and best practices.",
+      "author": "Bob Smith",
+      "publishedDate": "2024-09-20T12:00:00Z",
+      "tags": ["angular", "web development", "javascript"]
+    },
+    {
+      "id": 3,
+      "title": "Introduction to TypeScript",
+      "content": "TypeScript is a superset of JavaScript that adds static typing. Learn how it improves your development experience.",
+      "author": "Charlie Brown",
+      "publishedDate": "2024-09-25T14:00:00Z",
+      "tags": ["typescript", "javascript", "programming"]
+    },
+    {
+      "id": 4,
+      "title": "Best Practices for API Development",
+      "content": "API development requires careful consideration of design and implementation. Here are some best practices to follow.",
+      "author": "David Wilson",
+      "publishedDate": "2024-09-30T08:00:00Z",
+      "tags": ["api", "development", "best practices"]
+    },
+    {
+      "id": 5,
+      "title": "The Future of Web Development",
+      "content": "Web development is constantly evolving. This article explores upcoming trends and technologies that will shape the future.",
+      "author": "Eva Green",
+      "publishedDate": "2024-10-05T09:00:00Z",
+      "tags": ["web development", "future", "technology"]
+    }
+  ]
+}

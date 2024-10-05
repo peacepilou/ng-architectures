@@ -1,27 +1,21 @@
-# AngularArchitecture
+# Configuration :
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+- Créée 2 services de CALL de data, appelés "repositories"
+- Ces 2 services sont swiped par une factory, qui regarde les fichiers environnement, et qui selon l'environnement choisi, fourni les bons endpoints
+- Il y a 3 env : development, staging, prod.
+- Pour ajouter staging, il a fallu modifier le fichier "angular.json" en précisant pour le build et le serve les détails à lancer lors de configration=staging.
+- Tous mes smarts components qui nécessitent la data d'articles, sont injectés via factory. Il est donc très simple de changer toutes les provenances de data : depuis le "ng serve --configuration=..."
 
-## Development server
+# Inversion de dépendance
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Pour utiliser l'inversion de deps, il a fallu créer une classe abtraite pour l'injecter en tant que token dans la factory
+- Une interface n'est pas injectable, car n'existe pas en JS.
+- Ma classe abtraite implémente une interface basique CRUD pour formaliser les échanges de tous mes repositories de l'application, notamment en utilisant 3 types de responses aux calls de data : Entity, createDtos, updateDtos
+- Mes composants dépendant de la factory => ma factory dépend d'ABSTRACTION car d'une interface (classe abstraite)
+- Mes implém peuvent donc changer, ça ne change rien à mon composant
+- Trop bien !
 
-## Code scaffolding
+# Attention
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Si utilisation en development > la factory utilise l'implémentation json-server > penser à le lancer !
+- Lancer le json-server: se rendre dans le dossier "mocks" puis lancer `json-server --watch article-db.json`
