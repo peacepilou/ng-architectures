@@ -1,13 +1,12 @@
 import { inject, Injectable } from '@angular/core';
-import { ArticleRepository } from './abstractions/article-repository.interface';
 import { catchError, firstValueFrom, map, Observable, of, throwError } from 'rxjs';
-import { CreateArticleDTO } from '../models/dtos/create-article.dto';
-import { UpdateArticleDTO } from '../models/dtos/update-article.dto';
-import { Article } from '../models/entities/article.entity';
+import { ArticleRepository } from '../domain/ports/article.repository';
+import { environment } from '../../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
-import { ArticleDTO } from '../models/dtos/get-article.dto';
-import { environment } from '../../../../environments/environment';
-
+import { Article } from '../domain/core/entities/article.entity';
+import { ArticleDTO } from './dtos/get-article.dto';
+import { CreateArticleDTO } from './dtos/create-article.dto';
+import { UpdateArticleDTO } from './dtos/update-article.dto';
 @Injectable({
   providedIn: 'root',
 })

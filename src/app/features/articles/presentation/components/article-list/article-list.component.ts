@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { ArticleRepository } from '../../repositories/abstractions/article-repository.interface';
+import { ArticleRepository } from '../../../domain/ports/article.repository';
 import { Observable } from 'rxjs';
-import { Article } from '../../models/entities/article.entity';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ArticleRepositoryFactory } from '../../repositories/abstractions/article-repository.factory';
+import { ArticleRepositoryFactory } from '../../../infrastructure/article-repository.factory';
+import { Article } from '../../../domain/core/entities/article.entity';
 
 @Component({
   selector: 'app-article-list',

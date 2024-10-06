@@ -1,4 +1,4 @@
-import { Article } from '../entities/article.entity';
+import { Article } from '../../domain/core/entities/article.entity';
 
 export class CreateArticleDTO {
   constructor(

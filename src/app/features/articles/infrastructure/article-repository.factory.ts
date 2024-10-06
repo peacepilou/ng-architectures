@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
-import { ArticleRepository } from './article-repository.interface';
-import { ArticleLocalRepository } from '../article-local-repository';
-import { ArticleApiRepository } from '../article-api-repository';
-import { environment } from '../../../../../environments/environment';
+import { environment } from '../../../../environments/environment';
+import { ArticleLocalRepository } from './article-local.repository';
+import { ArticleApiRepository } from './article-api.repository';
+import { ArticleRepository } from '../domain/ports/article.repository';
 
 @Injectable({
   providedIn: 'root',
